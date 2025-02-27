@@ -7,7 +7,7 @@ using PAW.Data.Models;
 
 namespace PAW.Repository.Interfaces
 {
-    public interface IOfficeRequestDetailsRepository : IRepositoryBase<OfficeRequestDetails>
+    public interface IOfficeRequestDetailsRepository : IRepositoryBase<OfficeRequestDetail>
     {
     }
 }

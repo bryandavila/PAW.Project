@@ -10,7 +10,8 @@ namespace PAW.Repository.Repositories
 {
     public class OfficeRequestDetailsRepository : RepositoryBase<OfficeRequestDetail>, IOfficeRequestDetailsRepository
     {
-        public OfficeRequestDetailsRepository(CaseDbContext context) : base(context)
+        public OfficeRequestDetailsRepository(CaseDBContext repositoryContext)
+            : base(repositoryContext)
         {
         }
     }

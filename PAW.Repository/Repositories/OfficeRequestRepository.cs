@@ -8,11 +8,18 @@ using PAW.Repository.Interfaces;
 
 namespace PAW.Repository.Repositories
 {
-    public class OfficeRequestDetailsRepository : RepositoryBase<OfficeRequestDetail>, IOfficeRequestDetailsRepository
+    public class OfficeRequestRepository : RepositoryBase<OfficeRequest>, IOfficeRequestRepository
     {
-        public OfficeRequestDetailsRepository(CaseDBContext repositoryContext)
+        public OfficeRequestRepository(CaseDBContext repositoryContext)
             : base(repositoryContext)
         {
+        }
+
+        public IEnumerable<OfficeRequest> GetRequestsByStatus(string status)
+        {
+            return this.RepositoryContext.OfficeRequests
+                .Where(r => r.Status == status)
+                .ToList();
         }
     }
 }

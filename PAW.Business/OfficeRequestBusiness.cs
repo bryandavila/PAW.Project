@@ -21,7 +21,7 @@ namespace PAW.Business
             return _officeRequestRepository.GetRequestsByStatus(status);
         }
 
-        public void CompleteRequest(int requestId, OfficeRequestDetails details)
+        public void CompleteRequest(int requestId, OfficeRequestDetail details)
         {
             var request = _officeRequestRepository.FindByCondition(r => r.Id == requestId).FirstOrDefault();
             if (request != null && request.Status != "Completed")
