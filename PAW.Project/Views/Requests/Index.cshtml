@@ -1,0 +1,27 @@
+﻿@model IEnumerable<PAW.Model.OfficeRequest>
+
+<h2>Office Requests</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.Id</td>
+                <td>@request.RequestType</td>
+                <td>@request.Category</td>
+                <td>@request.Description</td>
+                <td>@request.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

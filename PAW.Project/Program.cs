@@ -1,7 +1,25 @@
+using Microsoft.EntityFrameworkCore;
+using PAW.Data.Models;
+using PAW.Repository.Repositories;
+using PAW.Repository.Interfaces;
+using PAW.Business;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Configure DbContext
+builder.Services.AddDbContext<CaseDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Register repositories
+builder.Services.AddScoped<IRepositoryBase<OfficeRequest>, RepositoryBase<OfficeRequest>>();
+builder.Services.AddScoped<IOfficeRequestRepository, OfficeRequestRepository>();
+builder.Services.AddScoped<IOfficeRequestDetailsRepository, OfficeRequestDetailsRepository>();
+
+// Register business layer
+builder.Services.AddScoped<OfficeRequestBusiness>();
 
 var app = builder.Build();
 
@@ -9,7 +27,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -22,6 +39,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Requests}/{action=Index}/{id?}");
 
 app.Run();
