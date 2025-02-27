@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PAW.Business;
-using PAW.Model;
+using PAW.Data.Models;
 
 namespace PAW.Project.Controllers
 {

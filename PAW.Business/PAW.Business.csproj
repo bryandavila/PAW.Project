@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+	  <ProjectReference Include="..\PAW.Repository\PAW.Repository.csproj" />
+	  <ProjectReference Include="..\PAW.Data\PAW.Data.csproj" />
+  </ItemGroup>
+
 </Project>

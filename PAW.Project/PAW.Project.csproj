@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\PAW.Business\PAW.Business.csproj" />
+		<ProjectReference Include="..\PAW.Repository\PAW.Repository.csproj" />
+		<ProjectReference Include="..\PAW.Data\PAW.Data.csproj" />
+	</ItemGroup>
+
 </Project>

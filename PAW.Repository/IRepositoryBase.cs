@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using PAW.Data.Models;
+using PAW.Repository.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PAW.Repository.Interfaces
 {
