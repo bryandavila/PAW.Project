@@ -1,0 +1,42 @@
+﻿@model PAW.Data.Models.OfficeRequest
+
+<h2>Create New Request</h2>
+
+<form method="post" asp-action="Create">
+    <div class="mb-3">
+        <label for="RequestType" class="form-label">Type</label>
+        <input type="text" class="form-control" name="RequestType" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Category" class="form-label">Category</label>
+        <input type="text" class="form-control" name="Category" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <textarea class="form-control" name="Description" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="RequesterName" class="form-label">Requester Name</label>
+        <input type="text" class="form-control" name="RequesterName" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="RequesterEmail" class="form-label">Requester Email</label>
+        <input type="email" class="form-control" name="RequesterEmail" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Priority" class="form-label">Priority</label>
+        <select class="form-control" name="Priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Request</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

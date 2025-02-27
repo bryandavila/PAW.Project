@@ -10,11 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Configure DbContext
-builder.Services.AddDbContext<CaseDBContext>(options =>
+builder.Services.AddDbContext<CaseDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Register repositories
-builder.Services.AddScoped<IRepositoryBase<OfficeRequest>, RepositoryBase<OfficeRequest>>();
+//builder.Services.AddScoped<IRepositoryBase<OfficeRequest>, RepositoryBase<OfficeRequest>>();
 builder.Services.AddScoped<IOfficeRequestRepository, OfficeRequestRepository>();
 builder.Services.AddScoped<IOfficeRequestDetailsRepository, OfficeRequestDetailsRepository>();
 

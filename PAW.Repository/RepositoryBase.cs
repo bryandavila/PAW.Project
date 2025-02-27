@@ -10,9 +10,9 @@ namespace PAW.Repository.Repositories
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected CaseDBContext RepositoryContext { get; set; }
+        protected CaseDbContext RepositoryContext { get; set; }
 
-        public RepositoryBase(CaseDBContext repositoryContext)
+        public RepositoryBase(CaseDbContext repositoryContext)
         {
             this.RepositoryContext = repositoryContext;
         }
